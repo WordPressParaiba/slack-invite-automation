@@ -5,7 +5,9 @@ html
     .content
       h1.title Entre na comunidade <span>#{community}</span> no Slack!
 
-      p O #[a(href='https://slack.com/') Slack] é um aplicativo para troca de mensagens, hoje usado pela #[a(href='https://make.wordpress.org/chat/') comunidade WordPress] para conversas e contribuições em tempo real entre seus usuários.
+      img(src="img/wpbrasil-slack.png").img-logo
+
+      p O #[a(href='https://slack.com/', target='_blank') Slack] é um aplicativo para troca de mensagens, hoje usado pela comunidade #[a(href='https://make.wordpress.org/chat/', target='_blank') Geral do WordPress] e #[a(href='https://slack-wpbrasil.herokuapp.com/', target='_blank') WPBrasil] para conversas e contribuições em tempo real entre seus usuários.
 
       p Entre tantas outras, o Slack possui as seguintes características:
 
@@ -15,7 +17,9 @@ html
         li Possui, além do aplicativo web, versões para iOS, Android, Mac e Windows
         li Integra com mais de 80 serviços, possibilitando que você receba notificações das suas ferramentas favoritas dentro de um único espaço
       
-      p.text-default Venha participar da comunidade WordPress Paraíba que está no Slack também. Digite abaixo o seu email e entre na conversa!
+      p.info Para fortalecer a nossa #[strong comunidade WordPres na Paraíba], criamos um slack, para unir os profissionais e apaixonados em WordPress.
+
+      p.info-2 Venha participar da #[strong comunidade WordPress Paraíba] que está no Slack também. Digite abaixo o seu email e entre na conversa!
 
       if success === 1
         div.message.success
@@ -25,7 +29,7 @@ html
           div.message.error
             p #{message}
         form(method="POST", action="/invite")#join-form
-          input(type="text", name="email", placeholder="Informe seu email")#slack-email
+          input(type="email", name="email", placeholder="Informe seu email")#slack-email
           input(type="submit", name="submit", value="Entrar")#slack-submit
     script.
       var form = document.getElementById('join-form');
